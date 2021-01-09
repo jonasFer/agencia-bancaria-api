@@ -30,9 +30,9 @@ public class ContaServiceImpl implements ContaService {
     }
 
     @Override
-    public Conta byId(Integer id) {
+    public Conta byNumero(Integer numero) {
         return repository
-                .findById(id)
+                .findByNumero(numero)
                 .orElseThrow(() -> new NotFoundException("Agência não encontrada"));
     }
 

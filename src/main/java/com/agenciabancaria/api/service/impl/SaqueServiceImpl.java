@@ -22,7 +22,7 @@ public class SaqueServiceImpl implements SaqueService {
 
     @Override
     public Transacao saque(MovimentacaoDto movimentacaoDto) {
-        Conta conta = contaService.byId(movimentacaoDto.getConta());
+        Conta conta = contaService.byNumero(movimentacaoDto.getConta());
 
         if (conta.getSaldo() < movimentacaoDto.getValor()) {
             throw new DomainException("Valor maior que o saldo atual");

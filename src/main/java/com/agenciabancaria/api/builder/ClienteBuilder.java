@@ -40,6 +40,7 @@ public class ClienteBuilder {
                 .nome(cliente.getPessoa().getNome())
                 .cpfCnpj(cliente.getPessoa().getCpfCnpj())
                 .agencia(cliente.getAgencia().getId())
+                .conta(cliente.getConta().getNumero())
                 .build();
     }
 }

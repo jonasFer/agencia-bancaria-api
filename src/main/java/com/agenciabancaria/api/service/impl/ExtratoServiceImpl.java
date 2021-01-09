@@ -19,16 +19,16 @@ public class ExtratoServiceImpl implements ExtratoService {
     private ContaService contaService;
 
     @Override
-    public List<MovimentacaoDto> extrato(Integer contaId) {
+    public List<MovimentacaoDto> extrato(Integer numero) {
+        Conta conta = contaService.byNumero(numero);
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        Conta conta = contaService.byId(contaId);
 
         return conta
                 .getTransacoes()
                 .stream()
                 .map(transacao ->
                     new MovimentacaoDto(
-                        transacao.getConta().getId(),
+                        transacao.getConta().getNumero(),
                         transacao.getValor(),
                         dateFormat.format(transacao.getDataCriacao()),
                         transacao.getTipoTransacao()

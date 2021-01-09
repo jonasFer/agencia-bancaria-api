@@ -6,6 +6,6 @@ import com.agenciabancaria.api.domain.enums.TipoTransacao;
 
 public interface ContaService {
     Conta create(Cliente cliente);
-    Conta byId(Integer id);
+    Conta byNumero(Integer numero);
     Conta updateSaldo(Conta conta, Double valor, TipoTransacao tipoTransacao);
 }

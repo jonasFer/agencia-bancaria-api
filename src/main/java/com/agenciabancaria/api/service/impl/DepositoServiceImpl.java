@@ -21,7 +21,7 @@ public class DepositoServiceImpl implements DepositoService {
 
     @Override
     public Transacao deposito(MovimentacaoDto depositoDto) {
-        Conta conta = contaService.byId(depositoDto.getConta());
+        Conta conta = contaService.byNumero(depositoDto.getConta());
         Transacao transacao = transacaoService.create(conta, depositoDto.getValor(), TipoTransacao.DEPOSITO);
         contaService.updateSaldo(conta, depositoDto.getValor(), TipoTransacao.DEPOSITO);
 

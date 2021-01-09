@@ -3,7 +3,6 @@ package com.agenciabancaria.api.rest.dto;
 import com.agenciabancaria.api.domain.enums.TipoTransacao;
 
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 public class MovimentacaoDto extends ContaDto {
     @NotEmpty(message = "Campo valor obrigatório")

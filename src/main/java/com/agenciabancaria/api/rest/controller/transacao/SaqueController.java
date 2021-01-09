@@ -23,6 +23,6 @@ public class SaqueController {
     @ResponseStatus(HttpStatus.CREATED)
     public SaldoDto create(@RequestBody @Valid MovimentacaoDto movimentacaoDto) {
         Transacao transacao = service.saque(movimentacaoDto);
-        return new SaldoDto(transacao.getConta().getId(), transacao.getConta().getSaldo());
+        return new SaldoDto(transacao.getConta().getNumero(), transacao.getConta().getSaldo());
     }
 }

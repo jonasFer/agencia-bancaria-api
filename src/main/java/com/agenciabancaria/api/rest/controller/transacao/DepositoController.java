@@ -23,6 +23,6 @@ public class DepositoController {
     @ResponseStatus(HttpStatus.CREATED)
     public SaldoDto create(@RequestBody @Valid MovimentacaoDto depositoDto) {
         Transacao transacao = service.deposito(depositoDto);
-        return new SaldoDto(transacao.getConta().getId(), transacao.getConta().getSaldo());
+        return new SaldoDto(transacao.getConta().getNumero(), transacao.getConta().getSaldo());
     }
 }

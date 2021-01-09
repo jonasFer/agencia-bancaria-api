@@ -1,6 +1,7 @@
 package com.agenciabancaria.api.service.impl;
 
 import com.agenciabancaria.api.domain.Cliente;
+import com.agenciabancaria.api.domain.Conta;
 import com.agenciabancaria.api.domain.repository.ClienteRepository;
 import com.agenciabancaria.api.exception.NotFoundException;
 import com.agenciabancaria.api.service.ClienteService;
@@ -34,7 +35,8 @@ public class ClienteServiceImpl implements ClienteService {
     @Override
     public Cliente create(Cliente cliente) {
         Cliente clienteBanco = clienteRepository.save(cliente);
-        contaService.create(clienteBanco);
+        Conta conta = contaService.create(clienteBanco);
+        clienteBanco.setConta(conta);
 
         return clienteBanco;
     }

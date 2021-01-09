@@ -13,8 +13,8 @@ public class SaldoServiceImpl implements SaldoService {
     private ContaService contaService;
 
     @Override
-    public Double saldo(Integer contaId) {
-        Conta conta = contaService.byId(contaId);
+    public Double saldo(Integer numero) {
+        Conta conta = contaService.byNumero(numero);
 
         return conta.getSaldo();
     }

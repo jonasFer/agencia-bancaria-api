@@ -14,10 +14,10 @@ public class SaldoController {
     @Autowired
     private SaldoService service;
 
-    @GetMapping("{id}")
+    @GetMapping("{conta}")
     @ResponseStatus(HttpStatus.CREATED)
-    public SaldoDto find(@PathVariable Integer id) {
-        Double saldo = service.saldo(id);
-        return new SaldoDto(id, saldo);
+    public SaldoDto find(@PathVariable Integer conta) {
+        Double saldo = service.saldo(conta);
+        return new SaldoDto(conta, saldo);
     }
 }

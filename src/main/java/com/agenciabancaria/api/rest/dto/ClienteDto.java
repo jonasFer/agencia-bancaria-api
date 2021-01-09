@@ -23,4 +23,6 @@ public class ClienteDto {
 
     @NotNull
     private Integer agencia;
+
+    private Integer conta;
 }
