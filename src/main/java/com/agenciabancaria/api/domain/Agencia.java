@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -21,8 +22,8 @@ public class Agencia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotNull(message = "Campo número não pode ser nulo")
-    @Min(value = 1, message = "Campo número não pode ser menor que 1")
+    @NotEmpty(message = "Campo numero obrigatório")
+    @Min(value = 1, message = "Campo numero não pode ser menor que 1")
     private Integer numero;
 
     @JsonIgnore

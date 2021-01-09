@@ -2,10 +2,11 @@ package com.agenciabancaria.api.rest.dto;
 
 import com.agenciabancaria.api.domain.enums.TipoTransacao;
 
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 public class MovimentacaoDto extends ContaDto {
-    @NotNull
+    @NotEmpty(message = "Campo valor obrigatório")
     private Double valor;
 
     private String data;
@@ -26,6 +27,14 @@ public class MovimentacaoDto extends ContaDto {
 
     public void setData(String data) {
         this.data = data;
+    }
+
+    public TipoTransacao getTipoTransacao() {
+        return tipoTransacao;
+    }
+
+    public void setTipoTransacao(TipoTransacao tipoTransacao) {
+        this.tipoTransacao = tipoTransacao;
     }
 
     public MovimentacaoDto(Integer conta, Double valor, String data, TipoTransacao tipoTransacao) {

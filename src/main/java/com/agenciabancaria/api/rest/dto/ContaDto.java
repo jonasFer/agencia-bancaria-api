@@ -1,9 +1,9 @@
 package com.agenciabancaria.api.rest.dto;
 
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotEmpty;
 
 public class ContaDto {
-    @NotNull
+    @NotEmpty(message = "Campo conta obrigatório")
     protected Integer conta;
 
     public ContaDto(Integer conta) {
